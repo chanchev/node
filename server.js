@@ -5,6 +5,7 @@ const hbs =require('hbs');
 const fs= require('fs');
 // new express app
 //no arguments needed
+const port =process.env.PORT || 3000;
 var app = express();
 
 hbs.registerPartials(__dirname+'/views/partials');
@@ -61,6 +62,6 @@ app.get('/bad',(req,res)=>{
 });
 //binds application to a port on machine
 //takes a second argument
-app.listen(3000, ()=>{
-  console.log('Server is up');
+app.listen(port, ()=>{
+  console.log('Server is up on '+port);
 });
